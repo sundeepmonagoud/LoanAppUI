@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42AB6AE9-CAC4-4141-A570-70B2FF22304C}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LoanAppUI", "LoanAppUI\", "{D58B5966-FA85-4C2F-9F24-2F617EF09E76}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63468"
+		Debug.AspNetCompiler.PhysicalPath = "LoanAppUI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63468\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63468"
+		Release.AspNetCompiler.PhysicalPath = "LoanAppUI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63468\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63468"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D58B5966-FA85-4C2F-9F24-2F617EF09E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58B5966-FA85-4C2F-9F24-2F617EF09E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D58B5966-FA85-4C2F-9F24-2F617EF09E76} = {42AB6AE9-CAC4-4141-A570-70B2FF22304C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33979775-5F81-4505-AEF8-E90AAEDDDA83}
+	EndGlobalSection
+EndGlobal
