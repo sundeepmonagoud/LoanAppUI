@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "LoanAppUI"
+  "defaultProject": "LoanAppUI",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

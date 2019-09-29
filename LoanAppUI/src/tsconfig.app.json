@@ -1,6 +1,13 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+
+    "paths": {
+      "@app/*": ["app/*"],
+      "@services/*": ["app/services/*"], 
+      "@shared/*": [ "app/shared/*" ],
+      "@common/*":[ "app/common/*" ]
+    }, 
     "outDir": "../out-tsc/app",
     "types": []
   },

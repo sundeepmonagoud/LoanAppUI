@@ -1,0 +1,8 @@
+<p>
+  customer-loans works!
+</p>
+
+<div *ngFor="let cust of customerloans$ | async">
+    {{cust.Name}}
+</div>
+<button (click)="getLoans()"> Get loans</button>
