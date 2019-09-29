@@ -27,6 +27,10 @@ export interface AppState {
             return {
               customerLoanData: action.payload.customerLoanData
             };
+        case CustomerloanActionTypes.CustomerloansTopup:
+          return {
+            customerLoanData: action.payload.customerLoanData
+          };
       default:
         return state;
     }

@@ -4,6 +4,7 @@ import { CustomerLoanData } from '@app/common/customer-loans.model';
 export enum CustomerloanActionTypes {
   LoadCustomerloans = '[Customerloan] Load Customerloans',
   LoadCustomerloansDone = '[Customerloan] Load Customerloans Done',
+  CustomerloansTopup = '[Customerloan] Customerloans Topup',
 }
 
 export class LoadCustomerloans implements Action {
@@ -22,4 +23,13 @@ export class LoadCustomerloansDone implements Action {
   }
 }
 
-export type CustomerloanActions = LoadCustomerloans | LoadCustomerloansDone;
+
+export class CustomerloansTopup implements Action {
+  readonly type = CustomerloanActionTypes.CustomerloansTopup;
+
+  constructor(readonly payload: {customerLoanData: CustomerLoanData[]}) {
+
+  }
+}
+
+export type CustomerloanActions = LoadCustomerloans | LoadCustomerloansDone | CustomerloansTopup;

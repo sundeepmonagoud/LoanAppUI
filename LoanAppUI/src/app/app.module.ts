@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerLoansComponent } from './customer-loans/customer-loans.component';
@@ -15,15 +15,18 @@ import { EffectsModule } from '@ngrx/effects';
 import { CustomerLoanEffects } from './effects/customerloan.effects';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CustomerLoanService } from './services/customer-loan-service';
+import { TopupInfoComponent } from './customer-loans/topup-info/topup-info.component';
+import { LoanDetailsComponent } from './customer-loans/loan-details/loan-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerLoansComponent, 
-    PageNotFoundComponent
+    PageNotFoundComponent, TopupInfoComponent, LoanDetailsComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule, 
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
