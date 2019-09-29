@@ -94,3 +94,19 @@ html {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
+.card {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border-radius: 3px;
+    color: #555;
+    background: #fff;
+    margin: 8px 0 10px; 
+    box-shadow: none !important;
+    border: 1px solid #DEDEDE !important;
+}
+
+.card .card-content {
+    padding: 15px 20px;
+    position: relative;
+}

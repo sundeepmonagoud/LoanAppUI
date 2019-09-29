@@ -22,12 +22,13 @@ export class CustomerLoansComponent implements OnInit {
 
   ngOnInit() {
 
+    this.getLoans();
   
   }
 
 
   getLoans(){
     var payload =  { customerLoanData:null};
-    this.store.dispatch(new LoadCustomerloans(payload));
+    this.store.dispatch(new LoadCustomerloans({ customerLoanData:null}));
   }
 }

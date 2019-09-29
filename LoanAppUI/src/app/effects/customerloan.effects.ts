@@ -4,7 +4,7 @@ import { map, mergeMap, catchError } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/reducers';
 import { CustomerLoanService } from '@app/services/customer-loan-service';
-import { LoadCustomerloans, CustomerloanActionTypes } from '@app/actions/customerloan.actions';
+import { LoadCustomerloans, CustomerloanActionTypes, LoadCustomerloansDone } from '@app/actions/customerloan.actions';
 import { CustomerLoanData } from '@app/common/customer-loans.model';
 
 
@@ -20,7 +20,7 @@ export class CustomerLoanEffects {
        mergeMap((action) => this.customerLoanService.getCustomerLoans()
        .pipe (
            map(customerLoan => {
-               return (new LoadCustomerloans( { customerLoanData : customerLoan}));
+              return (new LoadCustomerloansDone( { customerLoanData : customerLoan}));
            }),
            catchError((errorMessage) => (errorMessage))
        ))

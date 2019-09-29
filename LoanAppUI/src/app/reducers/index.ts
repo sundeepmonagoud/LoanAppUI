@@ -1,6 +1,6 @@
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { CustomerLoanData } from '@app/common/customer-loans.model';
-import { LoadCustomerloans, CustomerloanActionTypes } from '@app/actions/customerloan.actions';
+import { LoadCustomerloans, CustomerloanActionTypes, LoadCustomerloansDone, CustomerloanActions } from '@app/actions/customerloan.actions';
 import { environment } from 'environments/environment';
 
 export interface CustomerLoanState {
@@ -17,12 +17,16 @@ export interface AppState {
   }
 
 
-  export function customerLoanReducer(state: CustomerLoanState = initialCustomerLoanState, action: LoadCustomerloans): CustomerLoanState {
+  export function customerLoanReducer(state: CustomerLoanState = initialCustomerLoanState, action: CustomerloanActions): CustomerLoanState {
     switch (action.type) {
       case CustomerloanActionTypes.LoadCustomerloans:
         return {
           customerLoanData: action.payload.customerLoanData
         };
+        case CustomerloanActionTypes.LoadCustomerloansDone:
+            return {
+              customerLoanData: action.payload.customerLoanData
+            };
       default:
         return state;
     }

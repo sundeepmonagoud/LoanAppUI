@@ -1,8 +1,21 @@
-<p>
-  customer-loans works!
-</p>
-
-<div *ngFor="let cust of customerloans$ | async">
-    {{cust.Name}}
+<div class="card"> 
+  <p>
+    customer-loans works!
+  </p>
+  
+  <div class="card-content">
+    <div *ngFor="let cust of customerloans$ | async">
+      
+      <div>
+        <div class="col-9 col-s-6">
+          <span>{{cust.Name}}</span>
+        </div>
+        <div class="col-3 col-s-6">
+            <input type="checkbox">
+        </div>
+      </div>
+  </div>
+  </div>
+  
 </div>
-<button (click)="getLoans()"> Get loans</button>
+

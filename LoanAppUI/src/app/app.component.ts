@@ -8,7 +8,7 @@ import { CustomerLoanService } from '@services/customer-loan-service';
 
 })
 export class AppComponent {
-  title = 'LoanAppUI';
+  title = 'Loan App';
 
   constructor(public custLoanService : CustomerLoanService){
 
