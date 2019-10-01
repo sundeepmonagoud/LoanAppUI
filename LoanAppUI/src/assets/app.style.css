@@ -178,3 +178,26 @@ html {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.button {
+  background-color: #87bb8b;
+  border: 1px solid grey;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  margin: 4px 2px;
+  cursor: pointer;
+  min-width: 215px !important;
+}
+
+.roundbtn {border-radius: 12px;}
+
+
+table {
+  border-collapse: collapse;
+}
+table  td {
+  border: 1px solid black;
+}

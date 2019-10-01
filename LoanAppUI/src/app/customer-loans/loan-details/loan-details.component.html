@@ -1,3 +1,35 @@
-<p>
-  loan-details works!
-</p>
+<div>
+  <div class="col-6 col-s-4">
+    <span>Balance includes interest of</span>
+  </div>
+  <div class="col-3 col-s-4">
+      <span>{{customerLoanData.Interest | currency}}</span>
+    </div>
+  <div class="col-3 col-s-4">
+    
+  </div>
+</div>
+
+<div>
+  <div class="col-6 col-s-4">
+    <span>Early repayment fee</span>
+  </div>
+  <div class="col-3 col-s-4">
+      <span>{{customerLoanData.EarlyRePaymentFee | currency}}</span>
+    </div>
+  <div class="col-3 col-s-4">
+    
+  </div>
+</div>
+
+<div>
+  <div class="col-6 col-s-4">
+    <span>Payout/Carrayover amount</span>
+  </div>
+  <div class="col-3 col-s-4">
+      <span>{{customerLoanData.PayoutAmount | currency}}</span>
+    </div>
+  <div class="col-3 col-s-4">
+    This amount will be carried over
+  </div>
+</div>

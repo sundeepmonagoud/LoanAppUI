@@ -1,7 +1,45 @@
-<p>
+<!-- <p>
   topup-info works!
 </p>
-<div   >
-  Top Up :  {{availableBalace | currency}}
-  No of loans: {{noOfLoans}}
+<div *ngFor="let loan of customerloans$ | async">
+   {{loan.LoanNumber}}:  {{loan.IsSelected}}
 </div>
+<div  >
+  Top Up :  {{availableBalace }}
+  No of loans: {{noOfLoans}}
+</div> -->
+
+<table style="width: 100%">
+  <thead>
+    <span> <b>Personal Loan TopUp or Apply</b></span>
+  </thead>
+  <tr>
+    <td>
+      <div  class="col-8">
+          To apply for TopUp of an existing loan amount please select the loan below, make note of the Carry-over amount before proceeding. 
+    
+      </div>
+     
+      <div  class="col-2">
+          <span> Carryouver/Payout Amount </span>
+      </div>
+      <div class="col-2">
+         {{totalBalacne$ | async | currency}}
+      </div>
+    </td>
+    <td>
+      <button class="button roundbtn">Apply for increase Loan Amounts</button>
+    </td>
+  </tr>
+  <tr>
+      
+      <td>
+        
+      </td>
+      <td>
+        <button  [disabled]="noOfLoans >= 3" class="button roundbtn">Apply for new Personal Loan</button>
+      </td>
+    </tr>
+</table>
+
+
