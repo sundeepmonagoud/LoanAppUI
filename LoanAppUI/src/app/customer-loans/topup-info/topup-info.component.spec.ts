@@ -1,48 +1,70 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { TopupInfoComponent } from './topup-info.component';
-// import { HttpTestingController } from '@angular/common/http/testing';
-// import { of } from 'rxjs';
+import { fakeAsync, async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { Store } from '@ngrx/store';
-// import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { TopupInfoComponent } from './topup-info.component';
+import { HttpTestingController } from '@angular/common/http/testing';
+import { of } from 'rxjs';
 
+import { Store, select } from '@ngrx/store';
+import { provideMockStore, MockStore } from '@ngrx/store/testing'; 
+import { InjectionToken, DebugElement } from '@angular/core'; 
+import { selectCustomerLoans, selectTopUpBalance } from '@app/reducers';
+import { By } from '@angular/platform-browser';
 
-// describe('TopupInfoComponent', () => {
-//   let component: TopupInfoComponent;
-//   let fixture: ComponentFixture<TopupInfoComponent>;
-//   const initialState = { customerLoanData : null };
+describe('TopupInfoComponent', () => {
+  let component: TopupInfoComponent;
+  let fixture: ComponentFixture<TopupInfoComponent>;
+  const initialState = { customerLoanData : null };
  
 
-//   let store : MockStore< [{
-//     LoanId :1, 
-//     LoanNumber:4567389987,
-//     Name:"Personal Loan 1",
-//     Balance:1800.00,Interest:200.00,EarlyRePaymentFee:100.00,PayoutAmount:2100.00, IsSelected: false},
-//    {LoanId:2, LoanNumber:4567282937,Name:"Personal Loan 2",Balance:1500.00,Interest:100.00,EarlyRePaymentFee:50.00,PayoutAmount:1650.00, IsSelected: false}]>
-
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ TopupInfoComponent ],
-//       providers: [
-//         provideMockStore({ initialState })
-//       ]
-//     })
-//     .compileComponents();
-
-//     store = TestBed.get<Store>(Store);
+  const storeMock = {
+    pipe() {
+        select : {
+            return of( 1000
+            );
+          } 
+    }
   
-      
-//   }));
+  };
 
-//   beforeEach(() => {
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ TopupInfoComponent ],
+      providers: [
+        {   provide : Store,
+            useValue: storeMock
+         }
+      ]
+    })
+    .compileComponents();
+    fixture = TestBed.createComponent(TopupInfoComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
 
-//     fixture = TestBed.createComponent(TopupInfoComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+
+  it('should check the data on the page ', fakeAsync (() => {
+   
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+  
+      const hostElement = fixture.nativeElement;
+      const btnIncLoanAmt: HTMLButtonElement = hostElement.querySelector('#btnIncLoanAmt');
+      const bannerElement: HTMLElement = fixture.nativeElement;
+      expect(bannerElement.innerHTML).toContain('Carryouver/Payout Amount');
+      expect(bannerElement.innerHTML).toContain('To apply for TopUp of an existing loan amount please select the loan below, make note of the Carry-over amount before proceeding.');
+      expect(bannerElement.innerHTML).toContain('Apply for increase Loan Amounts');
+      expect(bannerElement.innerHTML).toContain('Apply for new Personal Loan');
+    });
+  })
+  );
+
+  
+});

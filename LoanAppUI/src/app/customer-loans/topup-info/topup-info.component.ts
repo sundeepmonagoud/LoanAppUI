@@ -13,6 +13,7 @@ import { reduce, map } from 'rxjs/operators';
 export class TopupInfoComponent implements OnInit {
   customerloans$: Observable<CustomerLoanData[]> = this.store.pipe(select(selectCustomerLoans));
   noOfLoans: number;
+  disableApplyLoanBtn :boolean = false;
   totalBalacne$ : Observable<number>;
 
   constructor(private store: Store<AppState>) {
@@ -24,11 +25,18 @@ export class TopupInfoComponent implements OnInit {
     this.customerloans$.subscribe( cl => {
        if(cl){
         this.noOfLoans = cl.length;
+        if(this.noOfLoans >= 3) {
+            this.disableApplyLoanBtn = true;
+        }
        }
     });
   }
 
-  applyForLo
+  applyForLoan(){
+
+    if(this.disableApplyLoanBtn) return;
+
+  }
 
   ngOnDestroy() {
     this.customerloans$.subscribe();

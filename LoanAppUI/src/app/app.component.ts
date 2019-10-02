@@ -9,17 +9,17 @@ import { CustomerLoanService } from '@services/customer-loan-service';
 })
 export class AppComponent {
   title = 'Loan App';
-
-  constructor(public custLoanService : CustomerLoanService){
+  show: boolean = true;
+  constructor(){
 
   }
 
   ngOnInit(){
-    // this.custLoanService.getCustomerLoans().subscribe(
-    //   success => {
-    //     console.log(success);
-    //   }
-    // );
+ 
+  }
+
+  close(){
+    this.show = false; 
   }
 
 }

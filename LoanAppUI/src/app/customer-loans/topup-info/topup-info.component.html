@@ -28,7 +28,7 @@
       </div>
     </td>
     <td>
-      <button class="button roundbtn">Apply for increase Loan Amounts</button>
+      <button #btnIncLoanAmt  class="button roundbtn btnIncLoanAmt">Apply for increase Loan Amounts</button>
     </td>
   </tr>
   <tr>
@@ -37,7 +37,7 @@
         
       </td>
       <td>
-        <button  [disabled]="noOfLoans >= 3" class="button roundbtn">Apply for new Personal Loan</button>
+        <button #btnApplyLoan [disabled]="disableApplyLoanBtn" class="button roundbtn" (click)="applyForLoan()">Apply for new Personal Loan</button>
       </td>
     </tr>
 </table>
