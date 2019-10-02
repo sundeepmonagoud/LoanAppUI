@@ -1,4 +1,10 @@
  
+ <div class="alert" *ngIf="show">
+  <span class="closebtn" (click)="close()">&times;</span> 
+  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+</div>
+
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
